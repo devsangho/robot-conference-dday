@@ -1,26 +1,132 @@
 @import "tailwindcss";
 
 :root {
+  /* 토스 스타일 컬러 팔레트 */
+  --toss-blue: #3182f6;
+  --toss-blue-light: #4a9aff;
+  --toss-blue-dark: #1b64da;
+  --toss-gray-50: #f9fafb;
+  --toss-gray-100: #f2f4f6;
+  --toss-gray-200: #e5e8eb;
+  --toss-gray-300: #d1d6db;
+  --toss-gray-400: #b0b8c1;
+  --toss-gray-500: #8b95a1;
+  --toss-gray-600: #6b7684;
+  --toss-gray-700: #4e5968;
+  --toss-gray-800: #333d4b;
+  --toss-gray-900: #191f28;
+  --toss-red: #f04452;
+  --toss-orange: #f97316;
+  --toss-green: #30c06e;
+  --toss-purple: #9b5de5;
+  
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: var(--toss-gray-900);
+  --card-bg: #ffffff;
+  --card-border: var(--toss-gray-200);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-pretendard);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
 }
 
 body {
-  background: var(--background);
+  background: var(--toss-gray-50);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 스크롤바 스타일링 */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--toss-gray-300);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--toss-gray-400);
+}
+
+/* 애니메이션 */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.5s ease-out forwards;
+}
+
+.animate-pulse-slow {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* 카드 호버 효과 */
+.card-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px -12px rgba(0, 0, 0, 0.15);
+}
+
+/* D-Day 뱃지 그라데이션 */
+.dday-urgent {
+  background: linear-gradient(135deg, var(--toss-red) 0%, #ff6b6b 100%);
+}
+
+.dday-soon {
+  background: linear-gradient(135deg, var(--toss-orange) 0%, #ffa726 100%);
+}
+
+.dday-normal {
+  background: linear-gradient(135deg, var(--toss-blue) 0%, var(--toss-blue-light) 100%);
+}
+
+.dday-far {
+  background: linear-gradient(135deg, var(--toss-gray-500) 0%, var(--toss-gray-400) 100%);
+}
+
+.dday-passed {
+  background: linear-gradient(135deg, var(--toss-gray-400) 0%, var(--toss-gray-300) 100%);
 }
