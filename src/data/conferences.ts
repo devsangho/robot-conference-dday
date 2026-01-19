@@ -111,6 +111,34 @@ export const roboticsConferences: Conference[] = [
     url: 'https://corl2026.org/',
     description: '로봇 학습 분야의 새로운 최고 권위 학회. 딥러닝과 로봇의 결합을 다룹니다.',
   },
+  // === 드론/무인항공기 학회 ===
+  {
+    id: 'icuas-2026',
+    shortName: 'ICUAS 2026',
+    fullName: 'International Conference on Unmanned Aircraft Systems',
+    startDate: '2026-06-15',
+    endDate: '2026-06-18',
+    location: '코르푸',
+    country: '그리스',
+    category: '인정',
+    url: 'https://uasconferences.com/2026_icuas/',
+    deadlines: {
+      paper: '2026-02-01',
+    },
+    description: '무인항공기 시스템(드론) 분야의 세계적인 학회. 자율비행, 군집 드론, 로봇 응용 등을 다룹니다.',
+  },
+  {
+    id: 'icuas-2025',
+    shortName: 'ICUAS 2025',
+    fullName: 'International Conference on Unmanned Aircraft Systems',
+    startDate: '2025-05-14',
+    endDate: '2025-05-17',
+    location: '샬럿',
+    country: '미국',
+    category: '인정',
+    url: 'https://uasconferences.com/2025_icuas/',
+    description: '2025년 ICUAS는 미국 노스캐롤라이나 샬럿에서 개최됩니다.',
+  },
   // === AI/ML 최우수 학회 ===
   {
     id: 'neurips-2026',
